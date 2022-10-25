@@ -15,7 +15,7 @@ connectDB();
 
 //Cors
 const corsOptions = {
-    origin: process.env.ALLOWED_CLIENTS
+    origin:'http://127.0.0.1:3000'
 }
 
 app.use(cors(corsOptions));
