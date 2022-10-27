@@ -73,7 +73,7 @@ router.post("/" , (req,res)=>{
     
     if(file.sender){
         
-        return res.status(422).send({ error:"Email already send"})
+        return res.status(404).send({ error:"Email already send"})
 
     }
 
@@ -105,10 +105,14 @@ router.post("/" , (req,res)=>{
             expires:'24 hours'
         })
         
+ }).then(() => {
+      return res.json({success: true});
+    }).catch(err => {
+      return res.status(500).json({error: 'Error in email sending.'});
     });
-
-    return res.send({ success:true})
-
+} catch(err) {
+  return res.status(500).send({ error: 'Something went wrong.'});
+}
    });
 
 module.exports = router
