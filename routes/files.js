@@ -79,7 +79,7 @@ router.post("/" , (req,res)=>{
 
     file.sender = emailFrom;
 
-    file.receiver = emailFrom;
+    file.receiver = emailTo;
 
     const response = await file.save();
 
