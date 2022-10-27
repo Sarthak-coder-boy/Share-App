@@ -68,7 +68,7 @@ router.post("/" , (req,res)=>{
     }
     
     //Get Data From Database
-    
+    try {
     const file = await File.findOne({uuid:uuid})
     
     if(file.sender){
