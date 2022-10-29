@@ -15,7 +15,7 @@ connectDB();
 
 //Cors
 const corsOptions = {
-    origin:'http://127.0.0.1:3000'
+    origin:'https://files-share-site.netlify.app/'
 }
 
 app.use(cors(corsOptions));
